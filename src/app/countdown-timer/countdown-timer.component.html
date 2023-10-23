@@ -1,0 +1,34 @@
+<div class="container">
+  <h1 class="title">Countdown Timer</h1>
+  <p class="subtitle">Tiempo restante hasta el evento</p>
+
+  <div class="lottie-animation mt-10">
+    <ng-lottie
+      [options]="options"
+      (animationCreated)="onAnimate($event)">
+    </ng-lottie>
+  </div>
+
+  <div class="countdown">
+    <div class="time-box">
+      <span class="time" id="days">{{ days }}</span>
+      <span class="label">Días</span>
+    </div>
+    <div class="time-box">
+      <span class="time" id="hours">{{ hours }}</span>
+      <span class="label">Horas</span>
+    </div>
+    <div class="time-box">
+      <span class="time" id="minutes">{{ minutes }}</span>
+      <span class="label">Minutos</span>
+    </div>
+    <div class="time-box">
+      <span class="time" id="seconds">{{ seconds }}</span>
+      <span class="label">Segundos</span>
+    </div>
+  </div>
+  <div class="buttons">
+    <button class="round-button">Botón 1</button>
+    <button class="round-button">Botón 2</button>
+  </div>
+</div>
