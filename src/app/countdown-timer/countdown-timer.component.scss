@@ -6,13 +6,15 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background-color: #121C41;
+  // background-color: #121C41;
+  background: rgb(18,28,65);
+background: linear-gradient(0deg, rgba(18,28,65,1) 0%, rgba(32,46,98,1) 35%, rgba(63,82,150,1) 100%);
   color: white;
   font-family: 'Outfit', sans-serif;
 }
 
 .lottie-animation{
-  width: 200px;
+  width: 100px;
 }
 
 .title {
@@ -22,7 +24,7 @@
 
 .subtitle {
   font-size: 1em;
-  color: #555;
+  // color: #555;
   margin-bottom: 2em;
 }
 
@@ -44,14 +46,19 @@
 }
 
 .time {
-  font-size: 2.5em;
+  font-size: 4.5em;
   font-weight: bold;
 }
 
 .label {
-  font-size: 1em;
-  color: #555;
+  font-size: 1.2em;
+  // color: #555;
 }
+
+
+
+
+
 
 .buttons {
   display: flex;
@@ -67,6 +74,8 @@
   font-size: 1em;
   cursor: pointer;
   outline: none;
+  height: 80px;
+  width: 80px;
 }
 
 @media (max-width: 576px) {

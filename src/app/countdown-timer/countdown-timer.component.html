@@ -1,11 +1,20 @@
 <div class="container">
+
+  <div class="lottie-animation mt-10">
+    <ng-lottie
+      [options]="optionsAnimationColombia"
+      (animationCreated)="onAnimateColombia($event)">
+    </ng-lottie>
+  </div>
+
+
   <h1 class="title">Countdown Timer</h1>
   <p class="subtitle">Tiempo restante hasta el evento</p>
 
   <div class="lottie-animation mt-10">
     <ng-lottie
-      [options]="options"
-      (animationCreated)="onAnimate($event)">
+      [options]="optionsAnimationFlight"
+      (animationCreated)="onAnimateFlight($event)">
     </ng-lottie>
   </div>
 

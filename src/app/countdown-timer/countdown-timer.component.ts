@@ -11,7 +11,11 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class CountdownTimerComponent implements OnInit{
 
-  options: AnimationOptions = {
+  optionsAnimationColombia: AnimationOptions = {
+    path: '/assets/colombia-heart.json'
+  };
+
+  optionsAnimationFlight: AnimationOptions = {
     path: '/assets/travel-tickets.json'
   };
 
@@ -27,7 +31,10 @@ export class CountdownTimerComponent implements OnInit{
     setInterval(() => this.updateCountdown(), 1000); // Actualizar cada segundo
   }
 
-  onAnimate(animationItem: AnimationItem): void {
+  onAnimateColombia(animationItem: AnimationItem): void {
+    console.log(animationItem);
+  }
+  onAnimateFlight(animationItem: AnimationItem): void {
     console.log(animationItem);
   }
 
