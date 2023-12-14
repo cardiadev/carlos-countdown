@@ -5,6 +5,7 @@ import player from 'lottie-web';
 
 import { AppComponent } from './app.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export function playerFactory(): any {
   return import('lottie-web');
@@ -18,7 +19,8 @@ export function playerFactory(): any {
   ],
   imports: [
     BrowserModule,
-    LottieModule.forRoot({ player: playerFactory })
+    LottieModule.forRoot({ player: playerFactory }),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

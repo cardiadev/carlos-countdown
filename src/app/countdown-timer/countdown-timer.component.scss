@@ -1,86 +1,182 @@
+// Breakpoints
+$bp-xs: 0;
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
+  height: 100dvh;
   text-align: center;
-  // background-color: #121C41;
-  background: rgb(18,28,65);
-background: linear-gradient(0deg, rgba(18,28,65,1) 0%, rgba(32,46,98,1) 35%, rgba(63,82,150,1) 100%);
+  // background: rgb(18,28,65);
+  background-color: #234E6D;
+  // background: linear-gradient(0deg, rgba(18,28,65,1) 0%, rgba(32,46,98,1) 35%, rgba(63,82,150,1) 100%);
   color: white;
   font-family: 'Outfit', sans-serif;
-}
+  font-weight: 200;
+  position: relative;
+  // z-index: 1;
 
-.lottie-animation{
-  width: 100px;
-}
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px; // Altura fija
+    background-color: #234E6D; /* Color de fondo en caso de que la imagen no cargue */
+    background: url('/assets/bg_dalle.jpg') center top repeat-x;
+    background-size: cover; // Esto hará que la imagen cubra el ancho del contenedor
+    z-index: -1;
+    background-size: contain; /* Esto hará que la imagen cubra el ancho del contenedor */
 
-.title {
-  font-size: 2em;
-  margin-bottom: 0.5em;
-}
-
-.subtitle {
-  font-size: 1em;
-  // color: #555;
-  margin-bottom: 2em;
-}
-
-.countdown {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 2em;
-}
-
-.time-box {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 80px; /* Asegurar un ancho mínimo */
-  box-sizing: border-box;
-}
-
-.time {
-  font-size: 4.5em;
-  font-weight: bold;
-}
-
-.label {
-  font-size: 1.2em;
-  // color: #555;
-}
-
-
-
-
-
-
-.buttons {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 200px;
-}
-
-.round-button {
-  border: none;
-  border-radius: 50%;
-  padding: 10px 15px;
-  font-size: 1em;
-  cursor: pointer;
-  outline: none;
-  height: 80px;
-  width: 80px;
-}
-
-@media (max-width: 576px) {
-  .time-box {
-    width: 50%; /* Cada time-box debería ocupar el 50% del ancho del contenedor */
-    margin: 0; /* Sin margen */
+    // background-repeat: no-repeat; /* La imagen no se repetirá */
+    z-index: 1; /* Coloca la imagen detrás de los demás elementos */
   }
+
+  // .background-image {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   height: 200px; // Altura fija
+  //   background: url('/assets/bg_dalle.jpg') center top no-repeat;
+  //   background-size: cover; // Esto hará que la imagen cubra el ancho del contenedor
+  //   z-index: -1; // Asegúrate de que esté detrás de los demás elementos
+  // }
+
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;  /* Posición absoluta para que se quede en la parte superior */
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   height: 200px;  /* Altura fija de 200px */
+  //   background-color: #234E6D; /* Color de fondo en caso de que la imagen no cargue */
+  //   background-image: url('/assets/bg_dalle.jpg'); /* Reemplaza con la ruta de tu imagen */
+  //   background-size: cover; /* Esto hará que la imagen cubra el ancho del contenedor */
+  //   background-position: center top; /* Centra la imagen horizontalmente y la alinea arriba */
+  //   background-repeat: no-repeat; /* La imagen no se repetirá */
+  //   z-index: -1; /* Coloca la imagen detrás de los demás elementos */
+  // }
+
+
+  .lottie{
+    width: 100px;
+    z-index: 1;
+    // outline: 1px solid red;
+    &.heart{
+      margin: 3rem 0;
+    }
+    &.travel{
+      margin: 2rem 0;
+    }
+  }
+
+  .main-text{
+    .title {
+      font-size: 2.25em;
+      font-weight: 400;
+      margin: 0 0 0.5em 0;
+    }
+    .subtitle {
+      font-size: 1em;
+      margin: 0;
+    }
+  }
+
+  .countdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 600px;
+    row-gap: 25px;
+
+    .dots {
+      width: 20px;
+      font-size: 4.5em;
+      font-weight: 500;
+    }
+    .time-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 100px;
+      box-sizing: border-box;
+
+      .time {
+        font-size: 4.5em;
+        font-weight: 500;
+      }
+      .label {
+        font-size: 1.2em;
+      }
+    }
+  }
+  .btn-wa {
+    padding: 10px 20px;
+    background-color: #22c55e;
+    border: none;
+    border-radius: .375rem;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0;
+
+    &:hover {
+      background-color: darken(#22c55e, 5%);
+    }
+
+    fa-icon {
+      font-size: 1.5rem;
+      margin-right: 12px;
+    }
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .container {
+    height: 100vh;
+    height: 100dvh;
+    // z-index: -3;
+    .background-image{
+    }
+    .lottie{
+      &.heart{
+        width: 100px;
+        margin:  3rem 0;
+      }
+      &.travel{
+        width: 120px;
+        margin: 2rem 0;
+      }
+    }
+    .main-text{
+      z-index: 1;
+      width: 90%;
+    }
+    .countdown {
+      .dots {
+        display: none;
+      }
+      .time-box{
+        width: 50%;
+      }
+    }
+    .btn-wa{
+      width: 90%;
+    }
+
+  }
+
 }

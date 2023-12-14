@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
-
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-countdown-timer',
@@ -10,6 +10,11 @@ import { AnimationOptions } from 'ngx-lottie';
   styleUrls: ['./countdown-timer.component.scss']
 })
 export class CountdownTimerComponent implements OnInit{
+sendWhatsapp() {
+  window.location.href = 'https://wa.me/?text=Ya%20falta%20menos%20d%C3%ADas%20para%20verte%20baby%20!';
+}
+
+  faWhatsapp = faWhatsapp;
 
   optionsAnimationColombia: AnimationOptions = {
     path: '/assets/colombia-heart.json'
@@ -20,7 +25,9 @@ export class CountdownTimerComponent implements OnInit{
   };
 
 
-  targetDate = moment('2023-12-16T23:59:59');
+  testDate = moment('2023-12-16T17:35:00');
+  targetDate = moment('2023-12-16T17:35:00');
+  finalDate = this.testDate;
   days: number = 0;
   hours: number = 0;
   minutes: number = 0;
@@ -41,7 +48,7 @@ export class CountdownTimerComponent implements OnInit{
 
   updateCountdown() {
     const now = moment();
-    const duration = moment.duration(this.targetDate.diff(now));
+    const duration = moment.duration(this.finalDate.diff(now));
 
     this.days = duration.asDays() > 0 ? Math.floor(duration.asDays()) : 0;
     this.hours = duration.hours() > 0 ? duration.hours() : 0;
