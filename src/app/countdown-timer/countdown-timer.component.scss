@@ -13,69 +13,37 @@ $bp-xxl: 1400px;
   align-items: center;
   height: 100vh;
   text-align: center;
-  // background: rgb(18,28,65);
   background-color: #234E6D;
   // background: linear-gradient(0deg, rgba(18,28,65,1) 0%, rgba(32,46,98,1) 35%, rgba(63,82,150,1) 100%);
   color: white;
   font-family: 'Outfit', sans-serif;
   font-weight: 200;
   position: relative;
-  // z-index: 1;
 
   .background-image {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 200px; // Altura fija
-    background-color: #234E6D; /* Color de fondo en caso de que la imagen no cargue */
+    height: 200px;
+    background-color: #234E6D;
     background: url('/assets/bg_dalle.jpg') center top repeat-x;
-    background-size: cover; // Esto hará que la imagen cubra el ancho del contenedor
+    background-size: cover;
     z-index: -1;
-    background-size: contain; /* Esto hará que la imagen cubra el ancho del contenedor */
-
-    // background-repeat: no-repeat; /* La imagen no se repetirá */
-    z-index: 1; /* Coloca la imagen detrás de los demás elementos */
+    background-size: contain;
+    z-index: 1;
   }
 
-  // .background-image {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   height: 200px; // Altura fija
-  //   background: url('/assets/bg_dalle.jpg') center top no-repeat;
-  //   background-size: cover; // Esto hará que la imagen cubra el ancho del contenedor
-  //   z-index: -1; // Asegúrate de que esté detrás de los demás elementos
-  // }
-
-  // &::before {
-  //   content: '';
-  //   display: block;
-  //   position: absolute;  /* Posición absoluta para que se quede en la parte superior */
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   height: 200px;  /* Altura fija de 200px */
-  //   background-color: #234E6D; /* Color de fondo en caso de que la imagen no cargue */
-  //   background-image: url('/assets/bg_dalle.jpg'); /* Reemplaza con la ruta de tu imagen */
-  //   background-size: cover; /* Esto hará que la imagen cubra el ancho del contenedor */
-  //   background-position: center top; /* Centra la imagen horizontalmente y la alinea arriba */
-  //   background-repeat: no-repeat; /* La imagen no se repetirá */
-  //   z-index: -1; /* Coloca la imagen detrás de los demás elementos */
-  // }
 
 
   .lottie{
     width: 100px;
     z-index: 1;
-    // outline: 1px solid red;
     &.heart{
       filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, .5));
       margin: 3rem 0;
     }
     &.travel{
-      // filter: drop-shadow(0px 0px 12px rgba(0, 0, 0, .5));
       margin: 2rem 0;
     }
   }
@@ -147,14 +115,14 @@ $bp-xxl: 1400px;
 
 @media (max-width: $bp-sm) {
   .container {
-    height: 100%;
-    // z-index: -3;
+    height: 100vh;
     .background-image{
+      height: 150px;
     }
     .lottie{
       &.heart{
-        width: 100px;
-        margin:  3rem 0;
+        width: 70px;
+        margin:  2rem 0 2rem 0;
       }
       &.travel{
         width: 100px;
@@ -175,6 +143,7 @@ $bp-xxl: 1400px;
     }
     .btn-wa{
       width: 90%;
+      margin: 2rem 0;
     }
 
   }
