@@ -1,32 +1,38 @@
 <div class="container">
-
-  <div class="background-image"></div>
-
-  <div class="lottie heart">
-    <ng-lottie
-      [options]="optionsAnimationColombia"
-      (animationCreated)="onAnimateColombia($event)">
-    </ng-lottie>
-  </div>
-
-<div class="main-text">
-    <h1 class="title">Carlos llegando a Colombia</h1>
-    <p class="subtitle">cada vez más cerquita de ti 😘</p>
-</div>
-
-<div class="lottie travel">
-  <ng-lottie
-    [options]="optionsAnimationFlight"
-    (animationCreated)="onAnimateFlight($event)">
-  </ng-lottie>
-</div>
-
-
-  <div class="countdown">
-    <div class="time-box">
-      <span class="time" id="days">{{ days }}</span>
-      <span class="label">Días</span>
+  <ng-container *ngIf="showConfetti; else countdownTemplate">
+    <div class="finish">
+      <p class="emoji">😘</p>
+      <h1>Esperame con los brazos abiertos</h1>
     </div>
+  </ng-container>
+
+  <ng-template #countdownTemplate>
+    <div class="background-image"></div>
+
+    <div class="lottie heart">
+      <ng-lottie
+        [options]="optionsAnimationColombia"
+        (animationCreated)="onAnimateColombia($event)">
+      </ng-lottie>
+    </div>
+
+    <div class="main-text">
+      <h1 class="title">Carlos llegando a Colombia</h1>
+      <p class="subtitle">cada vez más cerquita de ti 😘</p>
+    </div>
+
+    <div class="lottie travel">
+      <ng-lottie
+        [options]="optionsAnimationFlight"
+        (animationCreated)="onAnimateFlight($event)">
+      </ng-lottie>
+    </div>
+
+    <div class="countdown">
+      <div class="time-box">
+        <span class="time" id="days">{{ days }}</span>
+        <span class="label">Días</span>
+      </div>
 
       <span class="dots">:</span>
 
@@ -45,15 +51,13 @@
       <span class="dots">:</span>
 
       <div class="time-box">
-      <span class="time" id="seconds">{{ seconds }}</span>
-      <span class="label">Segundos</span>
+        <span class="time" id="seconds">{{ seconds }}</span>
+        <span class="label">Segundos</span>
+      </div>
     </div>
-  </div>
 
-
-  <button class="btn-wa" (click)="sendWhatsapp()">
-    <fa-icon [icon]="faWhatsapp"></fa-icon> Recordarle por WhatsApp
-  </button>
-
-
+    <button class="btn-wa" (click)="sendWhatsapp()">
+      <fa-icon [icon]="faWhatsapp"></fa-icon> Recordarle por WhatsApp
+    </button>
+  </ng-template>
 </div>
